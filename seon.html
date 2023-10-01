@@ -1,0 +1,152 @@
+<html>
+    <head>
+    <title>Portfolio for Oliveyoung</title>
+<style>
+    @font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 700;
+    src: local('Spoqa Han Sans Bold'),
+    url('fonts/SpoqaHanSansBold.woff2') format('woff2'),
+    url('fonts/SpoqaHanSansBold.woff') format('woff'),
+    url('fonts/SpoqaHanSansBold.ttf') format('truetype');
+    }
+    @font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 400;
+    src: local('Spoqa Han Sans Regular'),
+    url('fonts/SpoqaHanSansRegular.woff2') format('woff2'),
+    url('fonts/SpoqaHanSansRegular.woff') format('woff'),
+    url('fonts/SpoqaHanSansRegular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 300;
+    src: local('Spoqa Han Sans Light'),
+    url('fonts/SpoqaHanSansLight.woff2') format('woff2'),
+    url('fonts/SpoqaHanSansLight.woff') format('woff'),
+    url('fonts/SpoqaHanSansLight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 100;
+    src: local('Spoqa Han Sans Thin'),
+    url('fonts/SpoqaHanSansThin.woff2') format('woff2'),
+    url('fonts/SpoqaHanSansThin.woff') format('woff'),
+    url('fonts/SpoqaHanSansThin.ttf') format('truetype');
+}
+
+body{margin: 0;
+    background-color: rgb(209, 223, 201);}
+
+.page-center{
+    display: flex;
+    overflow-x: hidden;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 70%;
+    min-width: 1080px;
+    max-width: 1600px;
+}
+
+.work-container{
+    border-radius: 20px;
+    height: auto;
+    overflow: hidden;
+}
+
+.workimg{
+    width: 100%;
+    position: relative;
+}
+
+.workimg img{
+    width: 100%;
+    height: auto;
+}
+
+.workimg video{
+    width: 100%;
+    height: auto;
+}
+
+.button-container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+}
+
+.button{
+    width: 15%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+#img2{
+    outline: 1px solid #c2efd7;
+    outline-offset: -1px;
+}
+
+#img3{
+    outline: 1px solid #c2efd7;
+    outline-offset: -1px;
+}
+
+.vimeo{
+    width: 89.58%;
+    position: absolute;
+    top: 14.912%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.back-container{
+    position: relative;
+    margin-left: 40px;
+}
+.back{
+    z-index: 20;
+    top: 50px;
+    position: fixed;
+}
+
+
+</style>
+</head>
+<body>
+    <div class="page-center">
+        <div class="work-container">
+            <div class="workimg" id="img1">
+                <img src="4_1.png">
+            </div>
+            <div class="workimg" id="img2">
+                <img src="4_2.png">
+            </div>
+            <div class="workimg" id="img3">
+                <img src="4_3.png">
+            <div class="vimeo">
+                <div style="padding:56.25% 0 0 0;position:relative;">
+                    <iframe src="https://player.vimeo.com/video/850185885?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="선이의 비밀모험">
+                    </iframe>
+                </div>
+            </div>
+            <script src="https://player.vimeo.com/api/player.js"></script>
+    </div>
+    </div>
+    <div class="back-container">
+        <div class="back">
+            <a href="index.html#list">
+                <img src="x_white.svg">
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+    </html>

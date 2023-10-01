@@ -1,0 +1,463 @@
+<html>
+    <head>
+    <title>Portfolio for Oliveyoung</title>
+
+    <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet">
+
+<style>
+html{scroll-behavior: smooth;}
+body{
+    background-color: #EBF9B7;
+    margin: 0;
+    font-family: 'SUIT Variable', sans-serif;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+a{
+    text-decoration-line: none;
+}
+
+.main-video{
+ background-color: #EBF9B7;
+ width: 100%;
+ height: 100%;
+ position: sticky;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.main-video video{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.background-dark{
+    width:100%;
+    height:100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    transition: all ease 1.5s 0s;
+    backdrop-filter: blur(0px);
+    background: linear-gradient(0deg, rgb(225, 244, 162) 0%, rgb(225, 244, 162) 100%);
+    z-index: 2;
+}
+
+.main-top{
+    transition: all ease 0.5s 0s;
+    width: 92%;
+    left: 4%;
+    top: 4%;
+    height: auto;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+}
+
+.main-top p{
+    margin: 0;
+    color: #8bb424;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.scroll-container{
+    transition: all ease 0.5s 0s;
+    position: fixed;
+    transform: translate(-50%, 0%);
+    left: 50%;
+    bottom: 4.5%;
+}
+
+.scroll-container img{
+    width: auto;
+    margin-bottom: 10px;
+}
+
+.mousearrow-container{
+    height: 24px;
+    width: 30px;
+    margin: auto;
+    position: relative;
+}
+
+.mousearrow{
+    animation: mousearrowAnimation 1s infinite ease-in-out;
+    position: absolute;
+    top: 0px;
+    height: 12px;
+}
+
+@keyframes mousearrowAnimation{
+    0%{
+        top: 0px;
+    } 50% {
+        top: 12px;
+    }
+    100%{
+        top: 0px;
+    }
+}
+
+.box-scroll{
+    z-index: 50;
+    width: 100%;
+    height: 85%;
+    left: 0%;
+    top: 7.5%;
+    position: sticky;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.box-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+.scroll-delay{
+    height: 100vh;
+    position: relative;
+}
+
+.box-container{
+    width: 128vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-vertical{
+    overflow: hidden;
+    height: 100%;
+    width: 27vw;
+    display: inline-flex;
+}
+.box-horizonal{
+    overflow: hidden;
+    height: 100%;
+    width: 33vw;
+    display: inline-flex;
+    flex-flow: row wrap;
+    align-content: space-between;
+}
+.thumbnail-vertical{
+    transform: translate3d(-100%, 0, 0);
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    background-color: #e5f0d1;
+    cursor: pointer;
+    position: relative;
+}
+.thumbnail-horizonal{
+    transform: translate3d(-100%, 0, 0);
+    opacity: 0;
+    height: 49%;
+    width: 100%;
+    border-radius: 20px;
+    background-color: #e5f0d1;
+    cursor: pointer;
+}
+
+.thumbnail-title{
+    color: white;
+    font-size: 1.5em;
+    font-weight: 900;
+    margin: 2vw;
+    z-index: 2;
+    position: relative;
+    line-height: 1.5em;
+
+}
+
+.arrow-container{
+    position: absolute;
+    bottom: 0;
+    margin: 2vw;
+    height: 50px;
+    width: calc(100% - 4vw);
+}
+
+.arrow{
+    transition: all ease 1s 0s;
+    width: 15%;
+    height: 100%;
+    position: absolute;
+    left: 0%;
+}
+
+.arrow-bar{
+    height: 3px;
+    position: absolute;
+    transform: translate(0, -50%);
+    top: 50%;
+    width: 100%;
+    background-color: white;
+}
+
+.arrow-head{
+    width: 30px;
+    height: 100%;
+    top: 0%;
+    right: 0%;
+    position: absolute;
+    transition: all ease 1s 0s;
+}
+
+
+@keyframes fadeInLeft{
+    0% {
+            transform: translate3d(-100%, 0, 0);
+            opacity: 0;
+        }
+        to {
+            transform: translateZ(0);
+            opacity: 1;
+        }
+}
+
+#thumbnailBox:hover .arrow{width: 100%;}
+
+#thumbnailBox img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    border-radius: 20px;
+    position: absolute;
+}
+
+.blank{
+width: 3vw;
+}
+
+</style>
+</head>
+<body>
+<div class="main-video">
+<video autoplay muted loop>
+    <source src="olive_main.mp4">
+</video>
+<div class="background-dark" id="backgroundDark">
+</div>
+</div>
+
+
+<div class="main-top" id="textOpacity">
+<p>2023 CJ OLIVEYOUNG</p>
+<p>GRAPHIC DESIGN PORTFOLIO</p>
+</div>
+
+<div class="scroll-container" id="iconOpacity">
+<img src="mouseicon.svg">
+    <div class="mousearrow-container">
+        <div class="mousearrow">
+            <svg>
+            <path d="M 0 0 L 15 12 L 30 0" fill="transparent" stroke="#8bb424" stroke-width="2.5"></path>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<div class="body-scroll">
+    <div class="scroll-delay">
+    </div>
+    <div class="box-scroll" id="list">
+        <div class="box-container" id="scrollX">
+            <div class="blank"></div>
+            <div class="box-vertical">
+                <div class="thumbnail-vertical" id="thumbnailBox">
+                    <a href="pinkandven.html">
+                        <img src="thumb1.png">
+                            <p class="thumbnail-title">
+                                PINK & VEN
+                            </p>
+                            <div class="arrow-container">
+                                <div class="arrow">
+                                    <div class="arrow-bar">
+                                    </div>
+                                <div class="arrow-head">
+                                    <svg>
+                                        <path d="M 0 0 L 30 25 L 0 50" fill="transparent" stroke="white" stroke-width="3"></path>
+                                    </svg>
+                                </div>
+                                </div>
+                            </div>
+                        </a>
+                </div>
+            </div>
+            <div class="box-vertical">
+                <div class="thumbnail-vertical" id="thumbnailBox">
+                    <a href="bt21.html">
+                    <img src="thumb5.png">
+                    <p class="thumbnail-title">
+                        BT21 
+                        <br>GRAPHIC DESIGN
+                    </p>
+                    <div class="arrow-container">
+                        <div class="arrow">
+                            <div class="arrow-bar">
+                            </div>
+                            <div class="arrow-head">
+                            <svg>
+                                <path d="M 0 0 L 30 25 L 0 50" fill="transparent" stroke="white" stroke-width="3"></path>
+                            </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                </div>
+            </div>
+            <div class="box-horizonal">
+                <div class="thumbnail-horizonal" id="thumbnailBox">
+                    <a href="seon.html">
+                    <img src="thumb3.png">
+                    <p class="thumbnail-title">
+                        선이의 비밀모험
+                    </p>
+                    <div class="arrow-container">
+                        <div class="arrow">
+                            <div class="arrow-bar">
+                            </div>
+                            <div class="arrow-head">
+                            <svg>
+                                <path d="M 0 0 L 30 25 L 0 50" fill="transparent" stroke="white" stroke-width="3"></path>
+                            </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="thumbnail-horizonal" id="thumbnailBox">
+                    <a href="blackbunny.html">
+                    <img src="thumb4.png">
+                    <p class="thumbnail-title">
+                        2023 검은토끼해 연하장
+                    </p>
+                    <div class="arrow-container">
+                        <div class="arrow">
+                            <div class="arrow-bar">
+                            </div>
+                            <div class="arrow-head">
+                            <svg>
+                                <path d="M 0 0 L 30 25 L 0 50" fill="transparent" stroke="white" stroke-width="3"></path>
+                            </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                </div>
+            </div>
+            <div class="box-vertical">
+                <div class="thumbnail-vertical" id="thumbnailBox">
+                    <a href="snow.html">
+                    <img src="thumb2.png">
+                    <p class="thumbnail-title">
+                        SNOW INTERNSHIP
+                    </p>
+                    <div class="arrow-container">
+                        <div class="arrow">
+                            <div class="arrow-bar">
+                            </div>
+                            <div class="arrow-head">
+                            <svg>
+                                <path d="M 0 0 L 30 25 L 0 50" fill="transparent" stroke="white" stroke-width="3"></path>
+                            </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                </div>
+            </div>
+            <div class="blank"></div>
+        </div>
+    </div>
+    <div class="scroll-delay">
+    </div>
+</div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+history.scrollRestoration = "manual"
+
+const bodyScroll = document.body;
+    const boxScroll = document.querySelector('.box-scroll');
+    let isBoxScrollActive = false;
+
+    window.addEventListener('wheel', (e) => {
+        if (!isBoxScrollActive) {
+            bodyScroll.scrollTop += e.deltaY;
+
+            if (bodyScroll.scrollTop === bodyScroll.scrollHeight - bodyScroll.clientHeight) {
+                isBoxScrollActive = true;
+                boxScroll.style.overflow = 'auto';
+                bodyScroll.style.overflow = 'hidden';
+            }
+        } else {
+            boxScroll.scrollLeft += e.deltaY;
+
+            if (boxScroll.scrollLeft <= 0) {
+                isBoxScrollActive = false;
+                boxScroll.style.overflow = 'hidden';
+                bodyScroll.style.overflow = 'auto';
+            }
+        }
+
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+    const dark = document.getElementById("backgroundDark");
+    const icon = document.getElementById("iconOpacity");
+    const text = document.getElementById("textOpacity");
+    const thumbnailBoxes = document.querySelectorAll('#thumbnailBox');
+    let isAnimationPlayed = false;
+
+    window.addEventListener('scroll', function () {
+        const scrollPosition = window.scrollY;
+        const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+        
+        if (scrollPosition >= 0.4 * pageHeight && !isAnimationPlayed) {
+            thumbnailBoxes.forEach(function (box) {
+                box.style.animation = 'fadeInLeft 1.2s forwards';
+            });
+
+            isAnimationPlayed = true;
+        }
+
+        if (scrollPosition >= 0.4 * pageHeight){
+            dark.style.opacity = 0.75;
+            dark.style.backdropFilter = 'blur(20px)';
+        } else if(scrollPosition < 0.4 * pageHeight) {
+            dark.style.opacity = 0;
+            dark.style.backdropFilter = 'blur(0px)';
+        }
+
+        if (scrollPosition >= 0.1 * pageHeight){
+            icon.style.opacity = 0;
+            text.style.opacity = 0;
+        } else if(scrollPosition < 0.1 * pageHeight) {
+            icon.style.opacity = 1;
+            text.style.opacity = 1;
+        }
+
+    });
+});
+
+</script>
+
+    </html>
