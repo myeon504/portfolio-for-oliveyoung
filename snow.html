@@ -296,6 +296,7 @@ function toggleMute(videoId, buttonId, iconId) {
 
     if (video.muted) {
         video.muted = false;
+        video.volume = 0.2;
         icon.src = "icon_sound.svg";
         lastMutedVideo = video;
     } else {
