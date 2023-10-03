@@ -38,6 +38,8 @@
 }
 
 body{margin: 0;
+     opacity: 0;
+    transition: opacity 0.5s ease-in-out;
     background-color: rgb(237, 221, 221);}
 
 .main-video{
@@ -203,8 +205,8 @@ body{margin: 0;
 </div>
 </body>
     <script type="text/javascript">
-	window.onload = function(){
-    
-    }
+	window.addEventListener('load', function() {
+    	document.body.style.opacity = '1';
+	});
     </script>
     </html>
