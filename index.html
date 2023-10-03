@@ -9,6 +9,8 @@ html{scroll-behavior: smooth;}
 body{
     background-color: #EBF9B7;
     margin: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
     font-family: 'SUIT Variable', sans-serif;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
@@ -415,6 +417,10 @@ width: 3vw;
 
 history.scrollRestoration = "manual"
 
+window.addEventListener('load', function() {
+    document.body.style.opacity = '1';
+});
+    
     document.addEventListener('DOMContentLoaded', function () {
     const dark = document.getElementById("backgroundDark");
     const icon = document.getElementById("iconOpacity");
