@@ -117,13 +117,30 @@ a{
     position: sticky;
     overflow-x: scroll;
     overflow-y: hidden;
+    transition: all ease 1s 0s;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }
 
 .box-scroll::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera*/
+    margin-left: 10%;
+    height: 10px;
+  }
+
+  .box-scroll::-webkit-scrollbar-thumb {
+    background-color: #b5e63b;
+    border-radius: 10px;
+  }
+
+  .box-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: #a4df0f;
 }
+
+  .box-scroll::-webkit-scrollbar-track {
+    background-color: #f2f7e8;
+    border-radius: 10px;
+    margin: 4vw;
+    }
 
 .scroll-delay{
     height: 100vh;
@@ -131,19 +148,22 @@ a{
 }
 
 .box-container{
+    transition: all ease 1s 0s;
     width: 128vw;
-    height: 100%;
+    height: 95%;
     display: flex;
     justify-content: space-between;
 }
 
 .box-vertical{
+    transition: all ease 1s 0s;
     overflow: hidden;
     height: 100%;
     width: 27vw;
     display: inline-flex;
 }
 .box-horizonal{
+    transition: all ease 1s 0s;
     overflow: hidden;
     height: 100%;
     width: 33vw;
@@ -392,37 +412,8 @@ width: 3vw;
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
 <script type="text/javascript">
-    
-	window.onload = function(){
-    
-    }
-    
+
 history.scrollRestoration = "manual"
-
-const bodyScroll = document.body;
-    const boxScroll = document.querySelector('.box-scroll');
-    let isBoxScrollActive = false;
-
-    window.addEventListener('wheel', (e) => {
-        if (!isBoxScrollActive) {
-            bodyScroll.scrollTop += e.deltaY;
-
-            if (bodyScroll.scrollTop === bodyScroll.scrollHeight - bodyScroll.clientHeight) {
-                isBoxScrollActive = true;
-                boxScroll.style.overflow = 'scroll';
-                bodyScroll.style.overflow = 'hidden';
-            }
-        } else {
-            boxScroll.scrollLeft += e.deltaY;
-
-            if (boxScroll.scrollLeft <= 0) {
-                isBoxScrollActive = false;
-                boxScroll.style.overflow = 'hidden';
-                bodyScroll.style.overflow = 'scroll';
-            }
-        }
-
-    });
 
     document.addEventListener('DOMContentLoaded', function () {
     const dark = document.getElementById("backgroundDark");
