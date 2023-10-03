@@ -409,7 +409,7 @@ const bodyScroll = document.body;
 
             if (bodyScroll.scrollTop === bodyScroll.scrollHeight - bodyScroll.clientHeight) {
                 isBoxScrollActive = true;
-                boxScroll.style.overflow = 'auto';
+                boxScroll.style.overflow = 'scroll';
                 bodyScroll.style.overflow = 'hidden';
             }
         } else {
@@ -418,7 +418,7 @@ const bodyScroll = document.body;
             if (boxScroll.scrollLeft <= 0) {
                 isBoxScrollActive = false;
                 boxScroll.style.overflow = 'hidden';
-                bodyScroll.style.overflow = 'auto';
+                bodyScroll.style.overflow = 'scroll';
             }
         }
 
