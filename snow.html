@@ -113,9 +113,31 @@ body{
     position: relative;
     display: flex;
 }
-.video-row video{
-    border-radius: 10px;
+.video-box{
+    position: relative;
     width: 23%;
+    cursor: pointer;
+}
+
+.video-box video{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.video-box img{
+    position: absolute;
+    width: 10%;
+    top: 3.5%;
+    left: 84%;
+}
+
+.videomute{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: none;
+    z-index: 50;
 }
 
 </style>
@@ -135,46 +157,106 @@ body{
 <img src="6_3.png">
 <div class="video-container">
     <div class="video-row">
-        <video autoplay loop muted>
-            <source src="snow_1.mp4" type="video/mp4">
-        </video>
-        <video autoplay loop muted>
-            <source src="snow_2.mp4" type="video/mp4">
-        </video>
-        <video autoplay loop muted>
-            <source src="snow_3.mp4" type="video/mp4">
-        </video>
-        <video autoplay loop muted>
-            <source src="snow_4.mp4" type="video/mp4">
-        </video>
+        <div class="video-box" onclick="toggleMute('video1', 'offbutton1', 'soundicon1')">
+            <video autoplay loop muted id="video1">
+                <source src="snow_1.mp4" type="video/mp4">
+            </video>
+            <img src="icon_mute.svg" id="soundicon1">
+            <div class="videomute" id="offbutton1" onclick="toggleMute('video1', 'offbutton1', 'soundicon1')">
+            </div>    
+        </div>
+        <div class="video-box" onclick="toggleMute('video2', 'offbutton2', 'soundicon2')">
+            <video autoplay loop muted id="video2">
+                <source src="snow_2.mp4" type="video/mp4">
+            </video>
+            <img src="icon_mute.svg" id="soundicon2">
+            <div class="videomute" id="offbutton2" onclick="toggleMute('video2', 'offbutton2', 'soundicon2')">
+            </div>    
+        </div>
+        <div class="video-box" onclick="toggleMute('video3', 'offbutton3', 'soundicon3')">
+            <video autoplay loop muted id="video3">
+                <source src="snow_3.mp4" type="video/mp4">
+            </video>
+            <img src="icon_mute.svg" id="soundicon3">
+            <div class="videomute" id="offbutton3" onclick="toggleMute('video3', 'offbutton3', 'soundicon3')">
+            </div>    
+        </div>
+        <div class="video-box" onclick="toggleMute('video4', 'offbutton4', 'soundicon4')">
+            <video autoplay loop muted id="video4">
+                <source src="snow_4.mp4" type="video/mp4">
+            </video>
+            <img src="icon_mute.svg" id="soundicon4">
+            <div class="videomute" id="offbutton4" onclick="toggleMute('video4', 'offbutton4', 'soundicon4')">
+            </div>    
+        </div>
     </div>
     <div class="video-row">
-        <video autoplay loop muted>
-            <source src="snow_5.mp4" type="video/mp4">
-        </video>
-        <video autoplay loop muted>
-            <source src="snow_6.mp4" type="video/mp4">
-        </video>
-        <video autoplay loop muted>
-            <source src="snow_7.mp4" type="video/mp4">
-        </video>
-        <video autoplay loop muted>
-            <source src="snow_8.mp4" type="video/mp4">
-        </video>
+        <div class="video-box" onclick="toggleMute('video5', 'offbutton5', 'soundicon5')">
+            <video autoplay loop muted id="video5">
+                <source src="snow_5.mp4" type="video/mp4">
+            </video>
+            <img src="icon_mute.svg" id="soundicon5">
+            <div class="videomute" id="offbutton5" onclick="toggleMute('video5', 'offbutton5', 'soundicon5')">
+            </div>    
+        </div>
+        <div class="video-box" onclick="toggleMute('video6', 'offbutton6', 'soundicon6')">
+            <video autoplay loop muted id="video6">
+                <source src="snow_6.mp4" type="video/mp4">
+            </video>
+            <img src="icon_mute.svg" id="soundicon6">
+            <div class="videomute" id="offbutton6" onclick="toggleMute('video6', 'offbutton6', 'soundicon6')">
+            </div>    
+        </div>
+        <div class="video-box" onclick="toggleMute('video7', 'offbutton7', 'soundicon7')">
+            <video autoplay loop muted id="video7">
+                <source src="snow_7.mp4" type="video/mp4">
+            </video>
+            <img src="icon_mute.svg" id="soundicon7">
+            <div class="videomute" id="offbutton7" onclick="toggleMute('video7', 'offbutton7', 'soundicon7')">
+            </div>    
+        </div>
+        <div class="video-box" onclick="toggleMute('video8', 'offbutton8', 'soundicon8')">
+            <video autoplay loop muted id="video8">
+                <source src="snow_8.mp4" type="video/mp4">
+            </video>
+            <img src="icon_mute.svg" id="soundicon8">
+            <div class="videomute" id="offbutton8" onclick="toggleMute('video8', 'offbutton8', 'soundicon8')">
+            </div>    
+        </div>
     </div>
     <div class="video-row">
-        <video autoplay loop muted>
-            <source src="snow_9.mp4" type="video/mp4">
-        </video>
-        <video autoplay loop muted>
-            <source src="snow_10.mp4" type="video/mp4">
-        </video>
-        <video autoplay loop muted>
-            <source src="snow_11.mp4" type="video/mp4">
-        </video>
-        <video autoplay loop muted>
-            <source src="snow_12.mp4" type="video/mp4">
-        </video>
+        <div class="video-box" onclick="toggleMute('video9', 'offbutton9', 'soundicon9')">
+            <video autoplay loop muted id="video9">
+                <source src="snow_9.mp4" type="video/mp4">
+            </video>
+            <img src="icon_mute.svg" id="soundicon9">
+            <div class="videomute" id="offbutton9" onclick="toggleMute('video9', 'offbutton9', 'soundicon9')">
+            </div>    
+        </div>
+        <div class="video-box" onclick="toggleMute('video10', 'offbutton10', 'soundicon10')">
+            <video autoplay loop muted id="video10">
+                <source src="snow_10.mp4" type="video/mp4">
+            </video>
+            <img src="icon_mute.svg" id="soundicon10">
+            <div class="videomute" id="offbutton10" onclick="toggleMute('video10', 'offbutton10', 'soundicon10')">
+            </div>    
+        </div>
+        <div class="video-box" onclick="toggleMute('video11', 'offbutton11', 'soundicon11')">
+            <video autoplay loop muted id="video11">
+                <source src="snow_11.mp4" type="video/mp4">
+            </video>
+            <img src="icon_mute.svg" id="soundicon11">
+            <div class="videomute" id="offbutton11" onclick="toggleMute('video11', 'offbutton11', 'soundicon11')">
+            </div>    
+        </div>
+        <div class="video-box" onclick="toggleMute('video12', 'offbutton12', 'soundicon12')">
+            <video autoplay loop muted id="video12">
+                <source src="snow_12.mp4" type="video/mp4">
+            </video>
+            <img src="icon_mute.svg" id="soundicon12">
+            <div class="videomute" id="offbutton12" onclick="toggleMute('video12', 'offbutton12', 'soundicon12')">
+            </div>    
+        </div>
     </div>
 </div>    
 </div>
@@ -189,9 +271,33 @@ body{
     </div>
 </div>
 </body>
-        <script type="text/javascript">
-	window.onload = function(){
-    
+<script>
+
+    var lastMutedVideo = null;
+
+function toggleMute(videoId, buttonId, iconId) {
+    var video = document.getElementById(videoId);
+    var button = document.getElementById(buttonId);
+    var icon = document.getElementById(iconId);
+
+    if (lastMutedVideo && lastMutedVideo !== video) {
+        lastMutedVideo.muted = true;
+        var lastMutedIcon = document.getElementById("soundicon" + lastMutedVideo.id.substring(5));
+        if (lastMutedIcon) {
+            lastMutedIcon.src = "icon_mute.svg";
+        }
     }
-    </script>
+
+    if (video.muted) {
+        video.muted = false;
+        icon.src = "icon_sound.svg";
+        lastMutedVideo = video;
+    } else {
+        video.muted = true;
+        icon.src = "icon_mute.svg";
+        lastMutedVideo = null;
+    }
+}
+</script>
+    </html>
     </html>
